@@ -1,0 +1,111 @@
+
+
+/* WelcomePage.css */
+
+
+body, html {
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;/* Prevent horizontal scrolling */
+    display: flex;
+    height: 100vh;
+    width: 100vh;
+    background: linear-gradient(to bottom, #007BFF 0%, #8ecae6 100%);
+}
+
+
+/* Container for the entire page */
+
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: transparent; /* Transparent to blend with the gradient */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+
+.navbar-right {
+    display: flex;
+    margin-left: auto; /* Pushes right aligned items to the right */
+}
+
+
+.nav-button, .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+
+.nav-button:hover, .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Slight darkening on hover */
+    border-radius: 4px;
+}
+
+
+/* Welcome content container */
+.welcome-content {
+    margin-top: 100px; /* Adjusted to create space below the navbar */
+    padding: 0 20px;
+    text-align: left;
+}
+
+
+/* Title and subtitle */
+.welcome-title {
+    font-size: 3em;
+    font-weight: bold;
+    color: white; /* White title */
+    margin: 20px 0 10px;
+}
+
+
+.welcome-subtitle {
+    font-size: 1.2em;
+    color: white; /* White subtitle */
+    margin-bottom: 40px;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-center, .navbar-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .nav-button, .nav-link {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+
+    .welcome-title {
+        font-size: 2.5em;
+    }
+
+
+    .welcome-subtitle {
+        font-size: 1em;
+    }
+}
+
+

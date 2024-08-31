@@ -1,0 +1,70 @@
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+
+.profile-section {
+    margin-bottom: 20px;
+}
+
+
+.profile-section h2 {
+    margin-bottom: 5px;
+    color: #007BFF;
+}
+
+
+.profile-section p {
+    margin: 0;
+    color: #555;
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 90%; /* Make the container width adapt to smaller screens */
+    }
+
+
+    h1 {
+        font-size: 2rem; /* Adjust title size for smaller screens */
+    }
+
+
+    .profile-section h2 {
+        font-size: 1.2rem; /* Adjust section title size */
+    }
+
+
+    .profile-section p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+}
