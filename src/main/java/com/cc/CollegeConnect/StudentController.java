@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/studen")
+@RequestMapping(path = "/student")
 public class StudentController {
     private StudentService studentService;
 
