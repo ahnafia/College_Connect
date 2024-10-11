@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import './WelcomePage.css';
@@ -14,30 +12,26 @@ const WelcomePage = ({ profileInfo }) => {
 
 
     return (
-        <div className="welcome-page">
-            <div className="navbar">
+        <><div className="welcome-page">
+            <header className="navbar">
+            <h1 className="welcome-title">College Connect</h1>
                 <div className="navbar-center">
-                    <a href="/" className="nav-link">MESSAGES {profileInfo.username}</a>
-                    <a href="/" className="nav-link">GROUPS</a>
+                    <a href="/message" className="nav-link">MESSAGES</a>
                     <a href="/" className="nav-link">HOME</a>
-                    <a href="/" className="nav-link">PROFILE</a>
+                    <a href="/profile" className="nav-link">PROFILE</a>
                     <a href="/" className="nav-link">RECs</a>
-                    <a href="/" className="nav-link">CONTACT</a>
                 </div>
                 {!isLoggedIn && (
                     <div className="navbar-right">
-                        <button className="nav-button" onClick={() => navigate('/signup')}>SIGNUP</button>
-                        <button className="nav-button" onClick={() => navigate('/login')}>LOGIN</button>
+                        <a href="/signup" className="nav-auth">SIGN UP</a>
+                        <a href="/login" className="nav-auth">LOG IN</a>
                     </div>
                 )}
-            </div>
+            </header>
 
-
-            <div className="welcome-content">
-                <h1 className="welcome-title">College Connect</h1>
-                <p className="welcome-subtitle">Connecting students across campuses</p>
-            </div>
-        </div>
+        </div><div className="welcome-content">
+            </div></>
+        
     );
 }
 

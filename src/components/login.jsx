@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAccountInfo, logIn } from '../api/AuthenticationService';
+import { saveTokenToCookie} from '../api/CookieFunctions';
 
-
-const Login = ({ setProfileInfo }) => {
+const Login = ({ setToken }) => {
     const [userInfo, setUserInfo] = useState({ username: '',
         email: '',
         password: '',
@@ -31,9 +31,11 @@ const Login = ({ setProfileInfo }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await logIn(userInfo);
-            const { data } = await getAccountInfo(userInfo.email)
-            setProfileInfo(data);
+            const response = await logIn(userInfo)
+            const tokenData  = await response.data
+            saveTokenToCookie(tokenData.token, tokenData.expiration)
+            console.log(tokenData.token)
+            setToken(tokenData.token);
             navigate('/'); // Redirect to the dashboard or home page after login
         } catch (error) {
             console.error('Error during login:', error);
