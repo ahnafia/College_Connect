@@ -1,5 +1,6 @@
 package com.cc.CollegeConnect.WebSocketChatFeatures;
 
+import com.cc.CollegeConnect.WebSocketChatFeatures.ChatMessage.ChatMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;

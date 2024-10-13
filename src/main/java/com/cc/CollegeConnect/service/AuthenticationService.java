@@ -35,9 +35,9 @@ public class AuthenticationService {
         student.setVerificationCode(verifyCode);
         student.setVerificationExpiry(LocalDateTime.now().plusMinutes(15));
         student.setEnabled(false);
-        sendVerificationEmail(student);
-
+//        sendVerificationEmail(student);
         student.setId(studentService.idGenerator());
+
 
         return studentRepo.save(student);
     }

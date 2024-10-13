@@ -17,7 +17,7 @@ public class EmailService {
         MimeMessageHelper messageHelper = new MimeMessageHelper(emailContent, true);
         messageHelper.setTo(studentEmail);
         messageHelper.setSubject(subject);
-        messageHelper.setFrom("hello@amigoscode.com");
+        messageHelper.setFrom("noreplycollegeconnect10@gmail.com");
         messageHelper.setText(text, true);
 
         javaMailSender.send(emailContent);
