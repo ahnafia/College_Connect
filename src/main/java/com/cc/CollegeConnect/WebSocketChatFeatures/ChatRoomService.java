@@ -6,7 +6,7 @@ public class ChatRoomService {
     private ChatRoomRepository chatRoomRepository;
     public Optional<String> getChatRoomId(String senderId, String recipientId, boolean ifExists){
         return chatRoomRepository
-                .findBySenderandRecipientId(senderId, recipientId)
+                .findBySenderIdAndRecipientId(senderId, recipientId)
                 .map(ChatRoom::getChatId).or(() ->
         {
             if (ifExists){

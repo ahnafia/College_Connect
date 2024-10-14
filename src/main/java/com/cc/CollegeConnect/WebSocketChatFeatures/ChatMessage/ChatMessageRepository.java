@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ChatMessageRepository extends CrudRepository<ChatMessage, Long> {
+public interface ChatMessageRepository extends CrudRepository<ChatMessage, String> {
     List<ChatMessage> findByChatId(String chatId);
 }

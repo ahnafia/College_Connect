@@ -8,8 +8,8 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
+@Builder
 public class ChatRoom {
     @Id
     private String id;

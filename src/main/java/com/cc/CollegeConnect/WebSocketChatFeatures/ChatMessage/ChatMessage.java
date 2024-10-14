@@ -1,6 +1,7 @@
 package com.cc.CollegeConnect.WebSocketChatFeatures.ChatMessage;
 
 import com.cc.CollegeConnect.WebSocketChatFeatures.MessageType;
+import jakarta.persistence.Entity;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
@@ -11,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class ChatMessage {
     @Id
     private String id;

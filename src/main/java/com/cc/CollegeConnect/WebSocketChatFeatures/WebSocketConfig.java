@@ -28,19 +28,17 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app");
         registry.enableSimpleBroker("/user");
-        registry.setUserDestinationPrefix(("/user"));
+        registry.setUserDestinationPrefix("/user");
     }
 
     @Override
     public boolean configureMessageConverters(List<MessageConverter> messageConverters) {
-        MappingJackson2MessageConverter jackson2MessageConverter = new MappingJackson2MessageConverter();
-        jackson2MessageConverter.setObjectMapper(this.objectMapper);
-        DefaultContentTypeResolver defaultContentTypeResolver = new DefaultContentTypeResolver();
-        defaultContentTypeResolver.setDefaultMimeType(MimeTypeUtils.APPLICATION_JSON);
-        jackson2MessageConverter.setContentTypeResolver(defaultContentTypeResolver);
-        messageConverters.add(new StringMessageConverter());
-        messageConverters.add(new ByteArrayMessageConverter());
-        messageConverters.add(jackson2MessageConverter);
+        DefaultContentTypeResolver resolver = new DefaultContentTypeResolver();
+        resolver.setDefaultMimeType(MimeTypeUtils.APPLICATION_JSON);
+        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
+        converter.setObjectMapper(new ObjectMapper());
+        converter.setContentTypeResolver(resolver);
+        messageConverters.add(converter);
         return false;
     }
 }
