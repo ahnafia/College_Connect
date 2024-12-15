@@ -5,7 +5,6 @@ import com.cc.CollegeConnect.DataTransferObjects.RegisterStudentdto;
 import com.cc.CollegeConnect.DataTransferObjects.VeryifyStudentdto;
 import com.cc.CollegeConnect.Student;
 import com.cc.CollegeConnect.StudentRepo;
-import com.cc.CollegeConnect.StudentService;
 import jakarta.mail.MessagingException;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

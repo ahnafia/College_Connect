@@ -40,15 +40,11 @@ public class Student implements UserDetails{
     private LocalDateTime verificationExpiry;
 
 
-    private String headline;
     private String bio;
-    private ArrayList<String> interests;
+    private String interests;
     private boolean lookingForSimilarInterests;
-    private ArrayList<String> goals;
-    private ArrayList<String> education;
-    private ArrayList<String> workExperiences;
-    private ArrayList<String> extracurriculars;
-    private ArrayList<String> skills;
+    private String education;
+    private String extracurriculars;
     private String contactInfo;
 
     public Student(String username, String email, String encode) {
@@ -63,6 +59,7 @@ public class Student implements UserDetails{
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(AppUserRole.ADMIN.name());
         return Collections.singletonList(authority);
     }
+
 
     @Override
     public boolean isAccountNonExpired() {

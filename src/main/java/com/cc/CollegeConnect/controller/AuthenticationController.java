@@ -6,12 +6,10 @@ import com.cc.CollegeConnect.DataTransferObjects.LoginStudentdto;
 import com.cc.CollegeConnect.DataTransferObjects.RegisterStudentdto;
 import com.cc.CollegeConnect.DataTransferObjects.VeryifyStudentdto;
 import com.cc.CollegeConnect.Student;
-import com.cc.CollegeConnect.StudentService;
 import com.cc.CollegeConnect.response.LoginResponse;
 import com.cc.CollegeConnect.service.AuthenticationService;
 import com.cc.CollegeConnect.service.JwtService;
 import jakarta.mail.MessagingException;
-import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
