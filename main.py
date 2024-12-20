@@ -6,9 +6,9 @@ nlp= spacy.load("en_core_web_lg")
 
 def get_db_connection():
     conn = psycopg2.connect(
-        dbname= "CollegeConnect",
-        user="postgres",
-        password="Tanu@1976",
+        dbname= "****",
+        user="****",
+        password="****",
         host="localhost",
         port=5432
     )
