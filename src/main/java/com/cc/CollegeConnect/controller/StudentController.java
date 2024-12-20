@@ -20,6 +20,20 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    @GetMapping("/connections_{username}")
+    public ResponseEntity<ArrayList<String>> connections(@PathVariable("username") String username){
+        ArrayList<String> user_connections = studentService.connections(username);
+
+        return ResponseEntity.ok(user_connections);
+    }
+
+    @PostMapping("/accept{username}+{user_requested}")
+    public ResponseEntity<Boolean> accept(@PathVariable("username") String username,@PathVariable("user_requested") String user_requested){
+        System.out.println("wroks");
+        Boolean check = studentService.accept(username, user_requested);
+        return ResponseEntity.ok(check);
+    }
+
     @GetMapping("/matches_{username}")
     public ResponseEntity<ArrayList<String>> matches(@PathVariable("username") String username){
         ArrayList<String> user_matches = studentService.Matches(username);
@@ -37,10 +51,18 @@ public class StudentController {
         String students = studentService.findSimiliar(username);
         return ResponseEntity.ok(students);
     }
+
     @PostMapping("/add")
     public ResponseEntity<Student> addStudent(@RequestBody Student student){
         Student student1 = studentService.addStudents(student);
         return ResponseEntity.ok(student1);
+    }
+
+    @GetMapping("/get/{username}")
+    public ResponseEntity<Student> getStudentByUsername(@PathVariable("username") String username){
+        Student student = studentService.getStudentByUsername(username);
+        System.out.println(student.getUsername());
+        return ResponseEntity.ok(student);
     }
 
     @GetMapping

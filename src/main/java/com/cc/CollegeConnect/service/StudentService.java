@@ -27,6 +27,39 @@ public class StudentService implements UserDetailsService {
     private MatchesRepo matchesRepo;
     private static String USER_NOT_FOUND = "%s is not registered";
 
+    public ArrayList<String> connections(String username){
+        List<Matches> matches = matchesRepo.findAll();
+
+        ArrayList<String> user_connections = new ArrayList<>();
+        for (Matches match : matches) {
+            if (match.isConnection_accepted()) {
+                if (match.getConnectionRequest_user().equals(username)){
+                    user_connections.add(match.getRequested_user());
+                } else if ((match.getRequested_user().equals(username))){
+                    user_connections.add(match.getConnectionRequest_user());
+                }
+
+            }
+        }
+        System.out.println(user_connections);
+        return user_connections;
+
+    }
+
+    public boolean accept(String user_request, String user_requested){
+        List<Matches> matches = matchesRepo.findAll();
+        ArrayList<String> user_matches = new ArrayList<>();
+        Matches updates_match = null;
+        for (Matches match : matches) {
+            if ((match.getConnectionRequest_user().equals(user_request) && match.getRequested_user().equals(user_requested))) {
+                match.setConnection_accepted(true);
+                updates_match = match;
+            }
+        }
+        assert updates_match != null;
+        matchesRepo.save(updates_match);
+        return true;
+    }
     public Student addStudent(Student student){
         return studentRepo.save(student);
     }
@@ -35,22 +68,22 @@ public class StudentService implements UserDetailsService {
         List<Matches> matches = matchesRepo.findAll();
 
         ArrayList<String> user_matches = new ArrayList<>();
-        for (int i = 0; i < matches.size(); i++) {
-            if (matches.get(i).getConnectionRequest_user().equals(username)){
-                user_matches.add(matches.get(i).getRequested_user());
+        for (Matches match : matches) {
+            if (match.getConnectionRequest_user().equals(username) && !match.isConnection_accepted()) {
+                user_matches.add(match.getRequested_user());
             }
         }
+        System.out.println(user_matches);
         return user_matches;
-
     }
     public boolean connect(String user_request, String user_requested){
-        Matches match = new Matches(user_request,user_requested);
+        Matches match = new Matches(user_request,user_requested, false);
         matchesRepo.save(match);
         return true;
 
     }
     public String caller(String username) throws IOException, InterruptedException {
-        String baseUrl = "http://127.0.0.1:5000/get_similiar/";
+        String baseUrl = "****";
         String url = baseUrl + username;
         HttpClient client = HttpClient.newHttpClient();
 
@@ -65,7 +98,7 @@ public class StudentService implements UserDetailsService {
     }
 
     public String findSimiliar(String username) throws IOException, InterruptedException {
-        return caller("johndoe");
+        return caller(username);
     }
 
     public Student addStudents(Student student){
@@ -87,6 +120,10 @@ public class StudentService implements UserDetailsService {
 
     public Optional<Student> getStudent(String email){
         return studentRepo.findByEmail(email);
+    }
+
+    public Student getStudentByUsername(String username){
+        return studentRepo.findByUsername(username).get();
     }
 
     public Student updateStudent(String username, UpdateStudentDto updateStudentDto) {

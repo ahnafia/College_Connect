@@ -17,9 +17,11 @@ public class Matches {
 
     private String requested_user;
     private String connectionRequest_user;
+    private boolean connection_accepted;
 
-    public Matches(String connectionRequest_user, String requested_user) {
+    public Matches(String connectionRequest_user, String requested_user, boolean connection_accepted) {
         this.connectionRequest_user = connectionRequest_user;
         this.requested_user = requested_user;
+        this.connection_accepted = connection_accepted;
     }
 }

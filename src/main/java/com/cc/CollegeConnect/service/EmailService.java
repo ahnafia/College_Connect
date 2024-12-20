@@ -19,7 +19,6 @@ public class EmailService {
         messageHelper.setSubject(subject);
         messageHelper.setFrom("noreplycollegeconnect10@gmail.com");
         messageHelper.setText(text, true);
-
         javaMailSender.send(emailContent);
     }
 }
