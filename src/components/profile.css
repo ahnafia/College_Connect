@@ -6,75 +6,64 @@ body, html {
 }
 
 
-    .profile-container {
-        width: 1800px; /* Increased max-width for a wider container */
-        height: 850px;
-        margin-top: 50px;
-        margin-left: -260px;
-        padding: -5px;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        position:relative;
-    }
-    
-    .profile-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 50px;
-        row-gap: 150px;
-        width: 1750px;
-        margin-top: 100px;
-    }
-    
-    .profile-item {
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 6px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 250px;
-        margin-left: 30px;
-    }
-    
-    .edit-button {
-        margin-top: 10px;
-        padding: 8px 12px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    .edit-button:hover {
-        background-color: #0056b3;
-    }
-    
-    h1 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    
-    h2 {
-        margin-bottom: 10px;
-    }
+.profile-container {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
-    .edit-button {
-        margin-left: 10px; /* Space between the text and the button */
-        background-color: #007bff; /* Button color */
-        color: white; /* Text color */
-        border: none; /* Remove border */
-        border-radius: 4px; /* Rounded corners */
-        padding: 5px 10px; /* Padding */
-        cursor: pointer; /* Show pointer on hover */
-        font-size: 0.9em; /* Font size */
-    }
-    
-    .edit-button:hover {
-        background-color: #0056b3; /* Darker button color on hover */
-    }
-
-    /* Navigation bar */
+  .edit-button{
+    background-color: #ff5c5c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .profile-header {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .profile-header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .profile-header p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .profile-section {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .profile-section:last-of-type {
+    border-bottom: none;
+  }
+  
+  .profile-section h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .profile-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+  }
+  
+  .profile-section p {
+    color: #555;
+  }
+  

@@ -1,13 +1,13 @@
-
-
 /* WelcomePage.css */
 
 
-body, html {
+body,
+html {
     font-family: Arial, sans-serif;
     color: white;
-    overflow-x: hidden;/* Prevent horizontal scrolling */
-    
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+
     background: linear-gradient(to bottom, #007BFF 0%, #8ecae6 100%);
 }
 
@@ -17,7 +17,7 @@ body, html {
 
 /* Navigation bar */
 
-.navbar{
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,7 +28,7 @@ body, html {
     z-index: 100;
 }
 
-.nav-link{
+.nav-link {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: whitesmoke;
@@ -36,7 +36,7 @@ body, html {
     margin-left: 80px;
 }
 
-.nav-auth{
+.nav-auth {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: whitesmoke;
@@ -44,7 +44,7 @@ body, html {
     margin-left: 80px;
 }
 
-.nav-auth::after{
+.nav-auth::after {
     background-color: #007BFF;
 }
 
@@ -57,7 +57,40 @@ body, html {
     color: white;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 
 
+.Connect-Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 130vh;
+}
 
+.fade-in {
+    opacity: 0.01;
+    animation: fadeIn 0.7s forwards;
+    animation-delay: 0.3s;
+
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    border: 20px;
+    background-color: #4ab2e2;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}

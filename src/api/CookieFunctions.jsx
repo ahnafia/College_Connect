@@ -1,13 +1,12 @@
 export function setCookie(name, value, expiration){
     const date = new Date();
-    date.setTime(date.getTime() + expiration);  // Set expiration using the provided time in milliseconds
-    const expires = "; expires=" + date.toUTCString();  // Convert to UTC string format
+    date.setTime(date.getTime() + expiration);  
+    const expires = "; expires=" + date.toUTCString();  
     document.cookie = name + "=" + value + expires + "; path=/";
 }
 
 
 export function saveTokenToCookie(token, expiration){
-    console.log("foybd")
     if (token){
         setCookie('jwt', token, expiration)
         console.log('Token saved')
